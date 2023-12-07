@@ -1,11 +1,17 @@
 export class Sketch {
 
+    squares
+    app
     container
-    board
     row
+    board
+    boxes
     constructor() {
+        this.squares = 16
         this.app = document.getElementById('app')
         this.createContainer()
+        this.drawBoard()
+        this.setIdOnBoxes()
     }
 
     createContainer() {
@@ -18,6 +24,7 @@ export class Sketch {
 
     createRow() {
         this.row = document.createElement('div')
+        this.row.classList.add('row')
         this.row.style.width = "100%"
         this.row.style.display = "flex"
         this.row.style.justifyContent = "center"
@@ -28,8 +35,33 @@ export class Sketch {
         this.board.style.width = "16px"
         this.board.style.height = "16px"
         this.board.style.border = "1px solid black"
+        this.board.style.cursor = "pointer"
         this.board.classList.add('box')
         this.row.appendChild(this.board)
+
+
+    }
+
+    drawBoard() {
+        for (let j = 0; j < this.squares; j++) {
+            this.createRow()
+            for (let i = 0; i < this.squares; i++) {
+                this.createBoard()
+            }
+        }
+    }
+
+    setIdOnBoxes() {
+
+        this.boxes = document.querySelectorAll('.box')
+
+        for (let i = 0; i < this.boxes.length; i++) {
+            this.boxes[i].setAttribute('data-id', i)
+        }
+    }
+
+    getBoxesArray() {
+        return this.boxes
     }
 
 

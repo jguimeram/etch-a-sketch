@@ -1,18 +1,6 @@
 import { Sketch } from "./Sketch.js";
-const test = new Sketch()
+const game = new Sketch()
 
-let boxes = 16
+const boxEvent = game.getBoxesArray()
 
-//create board
-
-for (let j = 0; j < boxes; j++) {
-    test.createRow()
-    for (let i = 0; i < boxes; i++) {
-        test.createBoard()
-    }
-}
-
-
-//select boxes
-
-const box = document.querySelector('.box')
+console.log(boxEvent);
