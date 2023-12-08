@@ -9,11 +9,15 @@
     <title>Document</title>
     <script type="module" src="js/app.js" defer></script>
 </head>
+<!-- FIXME: buttons and range input -->
 
 <body>
     <div id="app">
-        <!--   <input type="range" name="size" id="size">
-        <label for="size">Size</label> -->
+    </div>
+    <div class="buttons">
+        <label for="size">Size:</label>
+        <input type="range" name="size" id="size" min="8" max="64" step="8" value="16">
+        <p class="range-value"></p>
     </div>
 </body>
 
