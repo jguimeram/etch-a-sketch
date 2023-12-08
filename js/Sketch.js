@@ -32,8 +32,8 @@ export class Sketch {
     }
     createBoard() {
         this.board = document.createElement('div')
-        this.board.style.width = "16px"
-        this.board.style.height = "16px"
+        this.board.style.width = "30px"
+        this.board.style.height = "30px"
         this.board.style.border = "1px solid black"
         this.board.style.cursor = "pointer"
         this.board.classList.add('box')
