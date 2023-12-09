@@ -4,23 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
-    <script type="module" src="js/app.js" defer></script>
+    <!--  <script type="module" src="js/app.js" defer></script> -->
 </head>
-<!-- FIXME: buttons and range input -->
 
 <body>
-    <div id="app">
-    </div>
-    <div class="buttons">
-        <label for="size">Size:</label>
-        <input type="range" name="size" id="size" min="8" max="64" step="8" value="16">
-        <p class="range-value"></p>
+    <header>
+        <h1 class="title">Etch a Sketch with Javascript</h1>
+    </header>
+    <div class="container">
+        <div class="entry__point">
+            <h2>Entry Point</h2>
+        </div>
+        <div class="buttons">
+            <label for="size">Size:</label>
+            <input type="range" name="size" id="size" min="8" max="64" step="8" value="16">
+            <p class="range-value">Value: </p>
+        </div>
         <div class="colorwheel">
             <label for="color">Color:</label>
             <input type="color" name="color" id="color" class="color">
+            <input type="button" value="option1" class="option1">
+            <input type="button" value="option2" class="option2">
         </div>
     </div>
 </body>

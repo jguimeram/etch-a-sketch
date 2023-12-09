@@ -1,7 +1,7 @@
 /* globals */
 
 :root {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Victor Mono', monospace;
     --white-color: #FFF;
 }
 
@@ -55,26 +55,36 @@ a:active {
 
 /** app div **/
 
-#app {
-    margin-top: 50px;
+.header {
+    margin: auto;
 }
 
-/** buttons section **/
+.title {
+    text-align: center;
+    font-weight: 700;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    border: 1px solid red;
+}
+
+.container * {
+    margin-top: 5px;
+}
+
+.entry_point {
+    width: 100%;
+}
 
 .buttons {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 50px auto;
-    width: 10%;
-    text-align: center;
+    gap: 1rem;
 }
 
 .colorwheel {
     display: flex;
-    justify-content: center;
+    gap: 1rem;
     align-items: center;
-    margin: 10px auto;
-    flex-direction: column;
-    width: 25%;
 }
