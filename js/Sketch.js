@@ -57,16 +57,15 @@ export class Sketch {
                 this.createBoard()
             }
         }
+        this.setIdOnBoxes()
     }
 
-    /*   setIdOnBoxes() {
-  
-          
-  
-          for (let i = 0; i < this.boxes.length; i++) {
-              this.boxes[i].setAttribute('data-id', i)
-          }
-      } */
+    setIdOnBoxes() {
+        this.boxes = document.querySelectorAll('.box')
+        for (let i = 0; i < this.boxes.length; i++) {
+            this.boxes[i].setAttribute('data-id', i)
+        }
+    }
 
     getBoxesArray() {
         return this.boxes

@@ -69,3 +69,12 @@ a:active {
     width: 10%;
     text-align: center;
 }
+
+.colorwheel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    flex-direction: column;
+    width: 25%;
+}
