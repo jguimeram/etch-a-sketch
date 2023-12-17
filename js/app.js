@@ -15,6 +15,7 @@ const color = document.querySelector('.color')
 const boxes = document.querySelectorAll('.box')
 const currentColor = document.querySelector('.color')
 const randomButt = document.querySelector('.random')
+const rainbowButt = document.querySelector('.rainbow')
 
 let grid
 let row
@@ -79,14 +80,15 @@ function paint() {
     const grid = document.querySelector('.grid')
     grid.addEventListener('click', (e) => {
         if (e.target.classList.contains('box')) {
-            changeColor(e)
+            selectColor(e)
         }
     })
 }
 
-function changeColor(arg) {
-
-    if (arg.target.style.backgroundColor == "") arg.target.style.backgroundColor = currentColor.value
+function selectColor(arg) {
+    let color
+    rainbowButt.classList.contains('rainbow-mode') ? color = randomColor() : color = currentColor.value
+    if (arg.target.style.backgroundColor == "") arg.target.style.backgroundColor = color
     else arg.target.style.backgroundColor = ""
 }
 
@@ -96,32 +98,38 @@ function changeGrid() {
         boxSize.numberOfCells = Number(e.target.value);
         boxSize.width = boxSize.gridWidth / Number(e.target.value);
         boxSize.height = boxSize.gridWidth / Number(e.target.value);
+        range.nextElementSibling.textContent = `Value: ${e.target.value} x ${e.target.value}`
         removeGrid()
         drawGrid()
     })
 
 }
 
-function random() {
+function randomColor() {
+    //"#0000FF"
+    console.log("enter");
+    const hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+    const res = []
+    res[0] = "#"
+    for (let i = 1; i < 7; i++) {
+        res.push(hex[Math.floor(Math.random() * 16)])
+    }
+    return res.join('');
+}
+
+function generateRandomColor() {
     randomButt.addEventListener('click', (e) => {
-        console.log(e);
-        function randomColor() {
-            //"#0000FF"
-            console.log("enter");
-            const hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
-            const res = []
-            res[0] = "#"
-            for (let i = 1; i < 7; i++) {
-                res.push(hex[Math.floor(Math.random() * 16)])
-            }
-            return res.join('');
-        }
-        console.log(randomColor());
         currentColor.value = randomColor()
-        console.log(currentColor.value);
     })
 }
 
+
+
+function rainbow() {
+    rainbowButt.addEventListener('click', (e) => {
+        e.target.classList.toggle("rainbow-mode")
+    })
+}
 
 (() => {
     createGrid()
@@ -130,7 +138,8 @@ function random() {
     paint()
     changeGrid()
     resetGame()
-    random()
+    generateRandomColor()
+    rainbow()
 })()
 
 

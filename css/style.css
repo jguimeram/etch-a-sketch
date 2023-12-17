@@ -112,3 +112,16 @@ a:active {
     gap: 1rem;
     align-items: center;
 }
+
+
+.rainbow-mode {
+    background-color: #0088FF;
+    color: #FFF;
+}
+
+.entry_point,
+.buttons,
+.colorwheel {
+    margin-top: 20px;
+    padding: 0.1rem;
+}
